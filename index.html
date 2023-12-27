@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- feather icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>Flipflop</title>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div id="container2">
+            <button type="button" id="close" onclick="hide()">X</button>
+            <div id="msg">
+                <h3>SELAMAT DATANG </h3>
+                <br>
+                <p>GA tau ah males</p>
+            </div>
+        </div>
+
+        <div id="container3">
+            <button type="button" id="close2" onclick="hidemenu()">X</button>
+            <div id="msg">
+                <h3>INFO</h3>
+                <br>
+                <p>GA tau ah males</p>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="wrapper">
+            <div class="itemz">
+                <input type="button" id="ShowMe" value="ABOUT" onclick="show()">
+                <input type="button" id="infobtn" value="INFO" onclick="showmenu()">
+
+
+                <button type="button" id="nor-mode" class="btn-nor">(NOR)</button>
+                <button type="button" id="nand-mode" class="btn-nand">(NAND)</button>
+
+
+
+            </div>
+
+            <h2 id="judul">RS FLIP FLOP (NAND)</h2>
+            <p class="info-p">Masukkan nilai reset dan set di dalam textfield inputan dibawah dan tekan tombol hijau
+                dibawah untuk
+                menampilkan output
+                !!
+            </p>
+
+
+
+
+        </div>
+        <div class="inp-group">
+            <div class="label-text">
+                <label for="inp-reset">INPUT RESET</label>
+                <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input reset" min="0"
+                    max="1">
+
+            </div>
+
+            <div class="label-text">
+                <label for="inp-set">INPUT SET</label>
+                <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input set" min="0"
+                    max="1">
+
+            </div>
+
+            <div class="label-text">
+                <label for="out-hasil">HASIL</label>
+                <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="hasil">
+            </div>
+        </div>
+
+
+
+
+        <div class="Btn-group">
+            <button id="hitung" class="equals"><i data-feather="search"></i></button>
+
+        </div>
+
+    </div>
+
+    <!-- feather icon -->
+    <script>
+        feather.replace();
+    </script>
+
+    <script src="scripts.js"></script>
+    <p id="hasil"></p>
+</body>
+
+</html>
