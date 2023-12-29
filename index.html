@@ -1,118 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <title>Flipflop</title>
+    <title>Flip!_Flop!</title>
+  </head>
 
-</head>
-
-<body>
-
-
+  <body>
     <div class="container">
-        <div id="container2">
-            <button type="button" id="close" onclick="hide()">X</button>
-            <div id="msg">
-                <h3>Kelompok 3 </h3>
-                <br>
-                <p>Calvin John Harsono (50422348)<br>
-                    David Radot Giovanni(50422009)<br>
-                    David Ricoh Setiadi (50422390)<br>
-                    Deby Maulida (50422397)<br>
-                    Marsa Ardita (50422863)<br>
-                    Miskah nur zakwan Wiratrivalen(50422883)<br>
-                    Muhammad Fathi Faiz Zaidan(51422045)<br>
-                    Stefanus Anugerah Agung (51422547)<br>
-                    Stefanus Eclesio Andersen Niman(51422548)</p>
+      <!-- MODAL POPUP MENU ABOUT -->
+      <div id="container2">
+        <button class="closeButton" onclick="hide()">
+          <span class="X"></span>
+          <span class="Y"></span>
+        </button>
+        <div id="msg2" class="page">
+          <h3>Tentang Kami</h3>
+          <h4>(Kelompok 3)</h4>
+          <p>
+            Calvin John Harsono (50422348)<br />
+            David Radot Giovanni(50422009)<br />
+            David Ricoh Setiadi (50422390)<br />
+            Deby Maulida (50422397)<br />
+            Marsa Ardita (50422863)<br />
+            Miskah nur zakwan Wiratrivalen(50422883)<br />
+            Muhammad Fathi Faiz Zaidan(51422045)<br />
+            Stefanus Anugerah Agung (51422547)<br />
+            Stefanus Eclesio Andersen Niman(51422548)
+          </p>
+        </div>
+        <div id="msg-pg2" class="page">
+          <h3 class="center-text">Tentang Website</h3>
+          <p id="hl-2">
+            Kami membuat website flip flop kalkulator ini sebagai upaya untuk memberikan pemahaman hasil dari reset dan set. Dengan demikian, website ini diharapkan dapat menjadi sumber belajar yang bermanfaat.
+          </p>
+        </div>
+        <div id="geser-btn">
+          <button type="button" id="back" class="btn-back" onclick="back()">Back</button>
+          <button type="button" id="next" class="btn-next" onclick="next()">Next</button>
+        </div>
+      </div>
 
-            </div>
+      <!-- MODAL POPUP MENU INFO-->
+      <div id="container3">
+        <button class="closeButton" onclick="hide()">
+          <span class="X"></span>
+          <span class="Y"></span>
+        </button>
+        <div id="msg3">
+          <h3>Penjelasan RS Flipflop</h3>
+          <br />
+          <p>RS Flip Flop mempunyai 2 input yaitu, S=Set dan R=Reset. Mempunyai 2 output yaitu Q dan Q'. Bertindak
+            sebagai 1 bit memori dengan output Q sebagai nilai bit tersebut.</p>
+          <p><strong>Set (1):</strong> Mengatur keluaran (Q) menjadi logika positif (1) saat dipicu.<br />
+            <strong>Reset (0)</strong>: Mengatur keluaran (Q) menjadi logika negatif (0) saat dipicu.<br />
+            <strong>Tetap</strong>: Mempertahankan keluaran (Q) pada kondisi sebelumnya, tidak mengalami perubahan saat
+            dipicu.<br />
+            <strong>Taktentu</strong>: menghasilkan keluaran(Q) yang tidak menentu dilambangkan dengan 'x'.
+          </p>
+        </div>
+      </div>
+
+      <!-- MODAL POPUP MENU HELP -->
+      <div id="container4">
+        <button class="closeButton" onclick="hide()">
+          <span class="X"></span>
+          <span class="Y"></span>
+        </button>
+        <div id="msg4">
+          <h3>Bantuan</h3>
+          <br />
+          <p hl-3><strong>Masukkan Nilai Reset</strong>: Anda dapat memasukkan nilai 1 atau 0 pada kolom Reset untuk
+            mengatur
+            keluaran (Q) menjadi
+            logika positif (1) saat dipicu. <br />
+            <strong>Masukkan Nilai Set</strong>: Anda dapat memasukkan nilai 1 atau 0 pada kolom Set untuk mengatur
+            keluaran (Q) menjadi
+            logika negatif (0) saat dipicu.<br> <strong>Untuk menampilkan hasil</strong>, anda dapat menggunkan <br />
+            tombol:<i data-feather="search"></i><br><strong>Untuk mereset hasil pada tampilan </strong>, anda dapat
+            menggunakan <br /> tombol:
+            <i data-feather="refresh-cw"></i>
+          </p>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="itemz">
+          <button type="button" id="ShowMe" class="btn-about" onclick="showabout()">About</button>
+          <button type="button" id="infobtn" class="btn-info" onclick="showinfo()">Info</button>
+          <button type="button" id="nor-mode" class="btn-nor">NOR</button>
+          <button type="button" id="nand-mode" class="btn-nand">NAND</button>
         </div>
 
-        <div id="container3">
-            <button type="button" id="close2" onclick="hidemenu()">X</button>
-            <div id="msg">
-                <h3>Penjelasan Flipflop</h3>
-                <br>
-                <p>Flipflop adalah rangkaian utama dalam logika sequensial.Counter, Register, Memory, serta rangkaian
-                    sequensial lainnya disusun dengan menggunakan flipflop sebagai komponen utama.</p>
-            </div>
-
-
+        <div class="tampilan">
+          <!-- button help -->
+          <button type="button" class="help-btn" id="help-btn" onclick="showhelp()">?</button>
+          <h2 id="judul" class="judul">RS FLIP FLOP (NAND)</h2>
+          <p class="info-p">
+            Untuk memulai, masukkan nilai "reset" dan "set" pada kotak teks di bawah ini. Jika Anda masih mengalami kesulitan atau memiliki pertanyaan lebih lanjut, silakan lihat panduan bantuan pada menu di pojok kanan atas.
+          </p>
+        </div>
+      </div>
+      <div class="inp-group">
+        <div class="label-text">
+          <label for="inp-reset" class="labelR">RESET</label>
+          <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input reset" min="0" max="1" />
         </div>
 
-
-
-        <div class="wrapper">
-            <div class="itemz">
-                <input type="button" id="ShowMe" value="ABOUT" onclick="show()">
-                <input type="button" id="infobtn" value="INFO" onclick="showmenu()">
-
-
-                <button type="button" id="nor-mode" class="btn-nor">(NOR)</button>
-                <button type="button" id="nand-mode" class="btn-nand">(NAND)</button>
-
-
-
-            </div>
-
-            <h2 id="judul">RS FLIP FLOP (NAND)</h2>
-            <p class="info-p">Masukkan nilai reset dan set di dalam textfield inputan dibawah dan tekan tombol hijau
-                dibawah untuk
-                menampilkan output
-                !!
-            </p>
-
-
-
-
-        </div>
-        <div class="inp-group">
-            <div class="label-text">
-                <label for="inp-reset">INPUT RESET</label>
-                <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input reset" min="0"
-                    max="1">
-
-            </div>
-
-            <div class="label-text">
-                <label for="inp-set">INPUT SET</label>
-                <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input set" min="0"
-                    max="1">
-
-            </div>
-
-            <div class="label-text">
-                <label for="out-hasil">HASIL</label>
-                <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="hasil">
-            </div>
+        <div class="label-text">
+          <label for="inp-set" class="labelS">SET</label>
+          <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input set" min="0" max="1" />
         </div>
 
-
-
-
-        <div class="Btn-group">
-            <button id="hitung" class="equals"><i data-feather="search"></i></button>
-
+        <div class="label-text">
+          <label for="out-hasil" class="labelHasil">HASIL</label>
+          <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="hasil" />
         </div>
+        <div class="btn-group">
+          <button id="hitung" class="equals"><i data-feather="search"></i></button>
+          <button id="Reset" class="reset"><i data-feather="refresh-cw"></i></button>
+        </div>
+      </div>
+    </div>
 
+    <div id="popup">
+      <div id="popup-content">
+        <p>Website ini tidak tersedia untuk ponsel atau tablet. Silakan menggunakan laptop/PC.</p>
+      </div>
     </div>
 
     <!-- feather icon -->
     <script>
-        feather.replace();
+      feather.replace();
     </script>
 
     <script src="scripts.js"></script>
     <p id="hasil"></p>
-</body>
-
+  </body>
 </html>
