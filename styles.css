@@ -26,6 +26,7 @@ body {
 .btn-info,
 .btn-nor,
 .btn-nand,
+.btn-jk,
 .btn-back,
 .btn-next {
   background-color: white;
@@ -44,6 +45,7 @@ body {
 .btn-info:hover,
 .btn-nor:hover,
 .btn-nand:hover,
+.btn-jk:hover,
 .btn-back:hover,
 .btn-next:hover {
   transform: translateY(-4px) translateX(-2px);
@@ -54,6 +56,7 @@ body {
 .btn-info:active,
 .btn-nor:active,
 .btn-nand:active,
+.btn-jk:active,
 .btn-back:active,
 .btn-next:active {
   transform: translateY(2px) translateX(1px);

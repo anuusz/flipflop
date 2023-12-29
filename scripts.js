@@ -135,6 +135,7 @@ function hide() {
 var judulElement = document.getElementById("judul");
 var norButton = document.getElementById("nor-mode");
 var nandButton = document.getElementById("nand-mode");
+var jkButton = document.getElementById("jk-mode");
 var CalculateButton = document.getElementById("hitung");
 var InputR = document.getElementById("inp-reset");
 var InputS = document.getElementById("inp-set");
@@ -161,11 +162,33 @@ nandButton.addEventListener("click", function () {
   updateMode("NAND");
 });
 
+jkButton.addEventListener("click", function () {
+  judulElement.innerHTML = "JK FLIP FLOP";
+  updateMode("JK");
+});
+
 
 function updateMode(mode) {
   currentMode = mode;
   resetInputs(); // Reset input dan hasil setiap kali mode berubah
 }
+
+//mengganti label REset dab set
+function updateMode(mode) {
+  currentMode = mode;
+  resetInputs(); // Reset input dan hasil setiap kali mode berubah
+
+  // Periksa mode yang baru dan perbarui label sesuai dengan mode tersebut
+  if (mode === "JK") {
+    document.querySelector(".labelR").textContent = "J";
+    document.querySelector(".labelS").textContent = "K";
+  } else {
+    // Jika mode bukan JK, kembalikan label ke nilai asal
+    document.querySelector(".labelR").textContent = "RESET";
+    document.querySelector(".labelS").textContent = "SET";
+  }
+}
+
 
 CalculateButton.addEventListener('click', function () {
   const resetValue = parseInt(InputR.value);
@@ -199,6 +222,23 @@ CalculateButton.addEventListener('click', function () {
       previousResult = { Q: previousResult.Q, Q_: previousResult.Q_ }; // Output same as previous result
     } else if (resetValue === 1 && setValue === 1) {
       previousResult = { Q: 'x', Q_: 'x' };
+    }
+  } else if (currentMode === "JK") {
+    if (resetValue === 0 && setValue === 1) {
+      previousResult = { Q: 0, Q_: 1 };
+    } else if (resetValue === 1 && setValue === 0) {
+      previousResult = { Q: 1, Q_: 0 };
+    } else if (resetValue === 0 && setValue === 0) {
+      // Tidak ada perubahan jika inputnya 0 dan 0
+      previousResult = { Q: previousResult.Q, Q_: previousResult.Q_ };
+    } else if (resetValue === 1 && setValue === 1) {
+      // Kasus khusus ketika resetValue dan setValue keduanya 1
+      if (previousResult.Q === 0 && previousResult.Q_ === 1) {
+        previousResult = { Q: 1, Q_: 0 };
+      } else if (previousResult.Q === 1 && previousResult.Q_ === 0) {
+        previousResult = { Q: 0, Q_: 1 };
+      }
+      // Jika previousResult.Q dan previousResult.Q_ bernilai sama, biarkan nilai tetap sama
     }
   }
 

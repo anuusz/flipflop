@@ -41,8 +41,8 @@
         <div id="msg-pg2" class="page">
           <h3 class="center-text">Tentang Website</h3>
           <p id="hl-2">
-            Kami membuat website flip flop kalkulator ini sebagai upaya untuk memberikan pemahaman hasil dari reset dan
-            set. Dengan demikian, website ini diharapkan dapat menjadi sumber belajar yang bermanfaat.
+            Kami membuat website flip flop kalkulator ini sebagai upaya untuk memberikan pemahaman mengenai RS flip
+            flop dan JK flip flop. Dengan demikian, website ini diharapkan dapat menjadi sumber belajar yang bermanfaat.
           </p>
         </div>
         <div id="geser-btn">
@@ -60,15 +60,16 @@
           <span class="Y"></span>
         </button>
         <div id="msg3">
-          <h3>Penjelasan RS Flipflop</h3>
+          <h3>Penjelasan RS & JK Flipflop</h3>
           <br />
-          <p>RS Flip Flop mempunyai 2 input yaitu, S=Set dan R=Reset. Mempunyai 2 output yaitu Q dan Q'. Bertindak
-            sebagai 1 bit memori dengan output Q sebagai nilai bit tersebut.</p>
-          <p><strong>Set (1):</strong> Mengatur keluaran (Q) menjadi logika positif (1) saat dipicu.<br />
-            <strong>Reset (0)</strong>: Mengatur keluaran (Q) menjadi logika negatif (0) saat dipicu.<br />
-            <strong>Tetap</strong>: Mempertahankan keluaran (Q) pada kondisi sebelumnya, tidak mengalami perubahan saat
-            dipicu.<br />
-            <strong>Taktentu</strong>: menghasilkan keluaran(Q) yang tidak menentu dilambangkan dengan 'x'.
+          <p>Terdapat 2 input pada RS dan JK flipflop, R=Reset/J dan S=Set/K . Mempunyai 2 output yaitu Q dan
+            Q'. Bertindak sebagai 1 bit memori dengan output Q sebagai nilai bit tersebut.<br /><br />
+          <p><strong>Set </strong>: Mengatur keluaran (Q) menjadi positif.<br />
+            <strong>Reset </strong>: Mengatur keluaran (Q) menjadi negatif.<br />
+            <strong>Tetap</strong>: tidak Merubah keluaran / sama.<br />
+            <strong>Taktentu</strong>: menghasilkan keluaran yang tidak menentu dilambangkan dengan 'x' pada
+            program.<br />
+            <strong>Toogle</strong>: Menukar posisi keluaran.
           </p>
         </div>
       </div>
@@ -85,14 +86,11 @@
         <div id="msg4">
           <h3>Bantuan</h3>
           <br />
-          <p hl-3><strong>Masukkan Nilai Reset</strong>: Anda dapat memasukkan nilai 1 atau 0 pada kolom Reset untuk
-            mengatur
-            keluaran (Q) menjadi
-            logika positif (1) saat dipicu. <br />
-            <strong>Masukkan Nilai Set</strong>: Anda dapat memasukkan nilai 1 atau 0 pada kolom Set untuk mengatur
-            keluaran (Q) menjadi
-            logika negatif (0) saat dipicu.<br> <strong>Untuk menampilkan hasil</strong>, anda dapat menggunkan <br />
-            tombol:<i data-feather="search"></i><br><strong>Untuk mereset hasil pada tampilan </strong>, anda dapat
+          <p hl-3><strong>- Masukkan nilai pada kolom inputan Reset/J</strong>: Anda dapat memasukkan nilai 1/0 pada
+            kolom Reset/J untuk mengatur keluaran <br />
+            <strong>- Masukkan nilai pada kolom inputan Set/K</strong>: Anda dapat memasukkan nilai 1/0 pada kolom Set/K
+            untuk mengatur keluaran<br> <strong>- Untuk menampilkan hasil</strong>, anda dapat menggunkan <br />
+            tombol:<i data-feather="search"></i><br><strong>- Untuk mereset hasil pada tampilan </strong>, anda dapat
             menggunakan <br /> tombol:
             <i data-feather="refresh-cw"></i>
           </p>
@@ -107,6 +105,8 @@
         <button type="button" id="infobtn" class="btn-info" onclick="showinfo()">Info</button>
         <button type="button" id="nor-mode" class="btn-nor">NOR</button>
         <button type="button" id="nand-mode" class="btn-nand">NAND</button>
+        <button type="button" id="jk-mode" class="btn-jk">JK</button>
+
       </div>
 
       <div class="tampilan">
@@ -114,27 +114,30 @@
         <button type="button" class="help-btn" id="help-btn" onclick="showhelp()">?</button>
         <h2 id="judul" class="judul">RS FLIP FLOP (NAND)</h2>
         <p class="info-p">
-          Untuk memulai, masukkan nilai "reset" dan "set" pada kotak teks di bawah ini. Jika Anda masih mengalami
-          kesulitan atau memiliki pertanyaan lebih lanjut, silakan lihat panduan bantuan pada menu di pojok kanan atas.
+          Untuk memulai, masukkan nilai "reset"/"J" dan "set"/"k" pada kotak teks di bawah ini. Jika Anda masih
+          mengalami
+          kebingungan atau memiliki pertanyaan lebih lanjut mengenai program, silakan lihat panduan bantuan pada menu di
+          pojok kanan atas.
         </p>
       </div>
     </div>
     <div class="inp-group">
       <div class="label-text">
         <label for="inp-reset" class="labelR">RESET</label>
-        <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input reset" min="0"
-          max="1" />
+        <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input" min="0" max="1" />
       </div>
 
       <div class="label-text">
         <label for="inp-set" class="labelS">SET</label>
-        <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input set" min="0" max="1" />
+        <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input" min="0" max="1" />
       </div>
-
       <div class="label-text">
         <label for="out-hasil" class="labelHasil">HASIL</label>
-        <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="hasil" />
+        <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="output" />
+
+
       </div>
+
       <div class="btn-group">
         <button id="hitung" class="equals"><i data-feather="search"></i></button>
         <button id="Reset" class="reset"><i data-feather="refresh-cw"></i></button>
