@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- feather icon -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    <title>Flip!_Flop!</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="container">
-      <!-- MODAL POPUP MENU ABOUT -->
+  <!-- feather icon -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>Flip!_Flop!</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- MODAL POPUP MENU ABOUT -->
+    <div id="container2-luar">
       <div id="container2">
         <button class="closeButton" onclick="hide()">
           <span class="X"></span>
@@ -39,7 +41,8 @@
         <div id="msg-pg2" class="page">
           <h3 class="center-text">Tentang Website</h3>
           <p id="hl-2">
-            Kami membuat website flip flop kalkulator ini sebagai upaya untuk memberikan pemahaman hasil dari reset dan set. Dengan demikian, website ini diharapkan dapat menjadi sumber belajar yang bermanfaat.
+            Kami membuat website flip flop kalkulator ini sebagai upaya untuk memberikan pemahaman hasil dari reset dan
+            set. Dengan demikian, website ini diharapkan dapat menjadi sumber belajar yang bermanfaat.
           </p>
         </div>
         <div id="geser-btn">
@@ -47,8 +50,10 @@
           <button type="button" id="next" class="btn-next" onclick="next()">Next</button>
         </div>
       </div>
+    </div>
 
-      <!-- MODAL POPUP MENU INFO-->
+    <!-- MODAL POPUP MENU INFO-->
+    <div id="container3-luar">
       <div id="container3">
         <button class="closeButton" onclick="hide()">
           <span class="X"></span>
@@ -67,8 +72,11 @@
           </p>
         </div>
       </div>
+    </div>
 
-      <!-- MODAL POPUP MENU HELP -->
+
+    <!-- MODAL POPUP MENU HELP -->
+    <div id="container4-luar">
       <div id="container4">
         <button class="closeButton" onclick="hide()">
           <span class="X"></span>
@@ -90,59 +98,63 @@
           </p>
         </div>
       </div>
-
-      <div class="wrapper">
-        <div class="itemz">
-          <button type="button" id="ShowMe" class="btn-about" onclick="showabout()">About</button>
-          <button type="button" id="infobtn" class="btn-info" onclick="showinfo()">Info</button>
-          <button type="button" id="nor-mode" class="btn-nor">NOR</button>
-          <button type="button" id="nand-mode" class="btn-nand">NAND</button>
-        </div>
-
-        <div class="tampilan">
-          <!-- button help -->
-          <button type="button" class="help-btn" id="help-btn" onclick="showhelp()">?</button>
-          <h2 id="judul" class="judul">RS FLIP FLOP (NAND)</h2>
-          <p class="info-p">
-            Untuk memulai, masukkan nilai "reset" dan "set" pada kotak teks di bawah ini. Jika Anda masih mengalami kesulitan atau memiliki pertanyaan lebih lanjut, silakan lihat panduan bantuan pada menu di pojok kanan atas.
-          </p>
-        </div>
-      </div>
-      <div class="inp-group">
-        <div class="label-text">
-          <label for="inp-reset" class="labelR">RESET</label>
-          <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input reset" min="0" max="1" />
-        </div>
-
-        <div class="label-text">
-          <label for="inp-set" class="labelS">SET</label>
-          <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input set" min="0" max="1" />
-        </div>
-
-        <div class="label-text">
-          <label for="out-hasil" class="labelHasil">HASIL</label>
-          <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="hasil" />
-        </div>
-        <div class="btn-group">
-          <button id="hitung" class="equals"><i data-feather="search"></i></button>
-          <button id="Reset" class="reset"><i data-feather="refresh-cw"></i></button>
-        </div>
-      </div>
     </div>
 
-    <!-- HP/Tablet Mode -->
-    <div id="popup">
-      <div id="popup-content">
-        <p>Website ini tidak tersedia untuk ponsel atau tablet. Silakan menggunakan laptop/PC.</p>
+
+    <div class="wrapper">
+      <div class="itemz">
+        <button type="button" id="ShowMe" class="btn-about" onclick="showabout()">About</button>
+        <button type="button" id="infobtn" class="btn-info" onclick="showinfo()">Info</button>
+        <button type="button" id="nor-mode" class="btn-nor">NOR</button>
+        <button type="button" id="nand-mode" class="btn-nand">NAND</button>
+      </div>
+
+      <div class="tampilan">
+        <!-- button help -->
+        <button type="button" class="help-btn" id="help-btn" onclick="showhelp()">?</button>
+        <h2 id="judul" class="judul">RS FLIP FLOP (NAND)</h2>
+        <p class="info-p">
+          Untuk memulai, masukkan nilai "reset" dan "set" pada kotak teks di bawah ini. Jika Anda masih mengalami
+          kesulitan atau memiliki pertanyaan lebih lanjut, silakan lihat panduan bantuan pada menu di pojok kanan atas.
+        </p>
       </div>
     </div>
+    <div class="inp-group">
+      <div class="label-text">
+        <label for="inp-reset" class="labelR">RESET</label>
+        <input type="number" id="inp-reset" class="inputR" autocomplete="off" placeholder="input reset" min="0"
+          max="1" />
+      </div>
 
-    <!-- feather icon -->
-    <script>
-      feather.replace();
-    </script>
+      <div class="label-text">
+        <label for="inp-set" class="labelS">SET</label>
+        <input type="number" id="inp-set" class="inputS" autocomplete="off" placeholder="input set" min="0" max="1" />
+      </div>
 
-    <script src="scripts.js"></script>
-    <p id="hasil"></p>
-  </body>
+      <div class="label-text">
+        <label for="out-hasil" class="labelHasil">HASIL</label>
+        <input type="text" id="out-hasil" class="Hasil-pert" readonly placeholder="hasil" />
+      </div>
+      <div class="btn-group">
+        <button id="hitung" class="equals"><i data-feather="search"></i></button>
+        <button id="Reset" class="reset"><i data-feather="refresh-cw"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup">
+    <div id="popup-content">
+      <p>Website ini tidak tersedia untuk ponsel atau tablet. Silakan menggunakan laptop/PC.</p>
+    </div>
+  </div>
+
+  <!-- feather icon -->
+  <script>
+    feather.replace();
+  </script>
+
+  <script src="scripts.js"></script>
+  <p id="hasil"></p>
+</body>
+
 </html>

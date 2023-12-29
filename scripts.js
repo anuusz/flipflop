@@ -1,36 +1,135 @@
 //ALERT BUTTON
+
+// MENU ABOUT
 function showabout() {
-  var alert = document.getElementById("container2");
-  alert.style.display = "block";
+  var container2Luar = document.getElementById("container2-luar");
+  var container2 = document.getElementById("container2");
+
+  // Tampilkan pop-up dan container luar
+  container2Luar.style.display = "block";
+  container2.style.display = "block";
 }
+
+// Event listener untuk menutup popup saat mengklik area luar
+var container2Luar = document.getElementById("container2-luar");
+container2Luar.addEventListener("click", function (event) {
+  // Check if the click target is the outer container itself (not its children)
+  if (event.target === container2Luar) {
+    hidePopups(); // Panggil fungsi untuk menyembunyikan kedua popups
+  }
+});
+
+// Fungsi untuk menyembunyikan kedua popups
+function hidePopups() {
+  var container2Luar = document.getElementById("container2-luar");
+  var container2 = document.getElementById("container2");
+
+  // Sembunyikan kedua popups
+  container2Luar.style.display = "none";
+  container2.style.display = "none";
+}
+
+// Fungsi untuk menyembunyikan popups ketika tombol "Close" diklik
+function hide() {
+  hidePopups();
+}
+
+//MENU INFO
 
 function showinfo() {
-  var alertz = document.getElementById("container3");
-  alertz.style.display = "block";
+  var container3Luar = document.getElementById("container3-luar");
+  var container3 = document.getElementById("container3");
+
+  // Tampilkan pop-up dan container luar
+  container3Luar.style.display = "block";
+  container3.style.display = "block";
 }
 
+// Event listener untuk menutup popup saat mengklik area luar
+var container3Luar = document.getElementById("container3-luar");
+container3Luar.addEventListener("click", function (event) {
+  // Check if the click target is the outer container itself (not its children)
+  if (event.target === container3Luar) {
+    hidePopups2(); // Panggil fungsi untuk menyembunyikan kedua popups
+  }
+});
+
+// Fungsi untuk menyembunyikan kedua popups
+function hidePopups2() {
+  var container3Luar = document.getElementById("container3-luar");
+  var container3 = document.getElementById("container3");
+
+  // Sembunyikan kedua popups
+  container3Luar.style.display = "none";
+  container3.style.display = "none";
+}
+
+// Fungsi untuk menyembunyikan popups ketika tombol "Close" diklik
+function hide() {
+  hidePopups2();
+}
+
+//MENU HELP
 function showhelp() {
-  var alertz = document.getElementById("container4");
-  alertz.style.display = "block";
+  var container4Luar = document.getElementById("container4-luar");
+  var container4 = document.getElementById("container4");
+
+  // Tampilkan pop-up dan container luar
+  container4Luar.style.display = "block";
+  container4.style.display = "block";
+}
+
+// Event listener untuk menutup popup saat mengklik area luar
+var container4Luar = document.getElementById("container4-luar");
+container4Luar.addEventListener("click", function (event) {
+  // Check if the click target is the outer container itself (not its children)
+  if (event.target === container4Luar) {
+    hidePopups3(); // Panggil fungsi untuk menyembunyikan kedua popups
+  }
+});
+
+// Fungsi untuk menyembunyikan kedua popups
+function hidePopups3() {
+  var container4Luar = document.getElementById("container4-luar");
+  var container4 = document.getElementById("container4");
+
+  // Sembunyikan kedua popups
+  container4Luar.style.display = "none";
+  container4.style.display = "none";
+}
+
+// Fungsi untuk menyembunyikan popups ketika tombol "Close" diklik
+function hide() {
+  hidePopups3();
 }
 
 function hide() {
   var element2 = document.getElementById("container2");
   var element3 = document.getElementById("container3");
   var element4 = document.getElementById("container4");
+  var element2L = document.getElementById("container2-luar");
+  var element3L = document.getElementById("container3-luar");
+  var element4L = document.getElementById("container4-luar");
 
   if (element2) {
     element2.style.display = "none";
+    element2L.style.display = "none";
   }
 
   if (element3) {
     element3.style.display = "none";
+    element3L.style.display = "none";
+
   }
 
   if (element4) {
-    element3.style.display = "none";
+    element4.style.display = "none";
+    element4L.style.display = "none";
+
+
   }
 }
+
 
 //MODE FLIPFLOP
 var judulElement = document.getElementById("judul");
@@ -157,6 +256,9 @@ function back() {
 // Tampilkan halaman pertama saat halaman dimuat
 showPage(currentPageIndex);
 
+
+
+
 // block hp/tabley
 function detectScreenSize() {
   var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -170,4 +272,3 @@ function detectScreenSize() {
 
 // Panggil fungsi saat halaman dimuat
 window.onload = detectScreenSize;
-
