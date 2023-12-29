@@ -157,9 +157,6 @@ function back() {
 // Tampilkan halaman pertama saat halaman dimuat
 showPage(currentPageIndex);
 
-
-
-
 // block hp/tabley
 function detectScreenSize() {
   var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -173,3 +170,4 @@ function detectScreenSize() {
 
 // Panggil fungsi saat halaman dimuat
 window.onload = detectScreenSize;
+
